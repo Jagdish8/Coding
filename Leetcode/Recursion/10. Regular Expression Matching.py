@@ -28,4 +28,19 @@
 # Input: s = "mississippi", p = "mis*is*p*."
 # Output: false
 
-
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        if(not p):
+            if(not s):
+                return True
+            return False
+        if(len(p)>1 and p[1] == '*'):
+            if(self.isMatch(s,p[2:])):
+                return True
+            if(s and (p[0] == s[0] or p[0] == '.')):
+                return self.isMatch(s[1:],p)
+            return False
+        else:
+            if(s and (p[0] == s[0] or p[0] == '.')):
+                return self.isMatch(s[1:],p[1:])
+            return False
