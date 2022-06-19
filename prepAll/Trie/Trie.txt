@@ -1,0 +1,76 @@
+Trie, also called prefix tree, is a special form of a Nary tree. Typically, a trie is used to store strings.
+
+
+A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.
+
+
+Each Trie node represents a string (a prefix). Each node might have several children nodes while the paths to different children nodes represent different characters. And the strings the child nodes represent will be the origin string represented by the node itself plus the character on the path.
+
+
+                                  ()                  parent
+                               /  \    \
+                            a /  b \    \c            path value
+                             /      \    \
+                           (a)     (b)    (c)        child of parent  
+                           |       /  \
+                          m|      /n   \z         path value
+                           |     /      \
+                          (am)  (bn)    (bz)       child of (a) and child of (b)
+
+
+In the example, the value we mark in each node is the string the node represents. For instance, we start from the root node and choose the path 'a', then choose the child 'm', finally we arrived at the node "am". The value of the node is exactly formed by the letters in the path from the root to the node sequentially.
+
+
+It is worth noting that the root node is associated with the empty string.
+
+
+
+One important property of Trie is that all the descendants of a node have a common prefix of the string associated with that node. That's why Trie is also called prefix tree.
+
+
+
+Let's look at the example again. For example, the strings represented by nodes in the subtree rooted at node "b" have a common prefix "b". And vice versa. The strings which have the common prefix "b" are all in the subtree rooted at node "b" while the strings with different prefixes will come to different branches.
+
+
+Representation: array or map
+
+
+
+Insertion in Trie:
+
+1. Initialize: cur = root
+2. for each char c in target string S:
+3.      if cur does not have a child c:
+4.          cur.children[c] = new Trie node
+5.      cur = cur.children[c]
+6. cur is the node which represents the string S
+
+
+Search in Trie
+
+1. Initialize: cur = root
+2. for each char c in target string S:
+3.   if cur does not have a child c:
+4.     search fails
+5.   cur = cur.children[c]
+6. search successes
+
+
+
+
+check implementation of trie to understand
+
+
+
+
+1. Autocomplete
+Google Suggest
+
+2. Spell checker
+Spell Checker
+
+3. IP routing (Longest prefix matching) # ok 
+
+
+
+Word search problem can be done using trie
