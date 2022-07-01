@@ -63,7 +63,6 @@ so we'll be working on finding which elements from nums1 and nums2 will come in 
 and which remaining of both on the right side
 
 lets suppose we take the 4 elements from array import array
-from math import log2
 from nums1 on left and remaining (5 - 4 = 1) of nums2
 and the remaining of both will be on the side side
 example:           left     |     right
