@@ -8,6 +8,7 @@ class Solution:
     # M : size of the array A2[]
     
     #Function to sort an array according to the other array.
+    #TLE
     def relativeSort (self,A1, N, A2, M):
         # Your Code Here
 
@@ -46,5 +47,29 @@ class Solution:
             else:
                 high = mid - 1
                 
+        return res
+    
+    # accepted
+        def relativeSort (self,A1, N, A2, M):
+        # Your Code Here
+
+        h = {}
+        for i in A1:
+            if(i not in h):
+                h[i] = 0
+            h[i] += 1
+        
+        res = []
+        for i in A2:
+            if(i in h):
+                while(h[i]):
+                    res.append(i)
+                    h[i] -= 1
+        
+        for i in sorted(h):
+            while(h[i]):
+                res.append(i)
+                h[i] -= 1
+        
         return res
         
