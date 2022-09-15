@@ -1,6 +1,6 @@
-Given the root of a binary tree, return the number of uni-value subtrees.
+# Given the root of a binary tree, return the number of uni-value subtrees.
 
-A uni-value subtree means all nodes of the subtree have the same value.
+# A uni-value subtree means all nodes of the subtree have the same value.
 
 # https://leetcode.com/problems/count-univalue-subtrees/
 
